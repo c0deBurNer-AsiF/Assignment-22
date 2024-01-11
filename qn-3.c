@@ -26,5 +26,7 @@ void input()
 
     printf("sum of numbers %d",sum);
 
+    free(p);
+
 
 }
