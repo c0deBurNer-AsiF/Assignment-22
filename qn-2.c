@@ -4,20 +4,29 @@ the input from the user and display the average of data values.*/
 
 #include<stdio.h>
 #include<stdlib.h>
-void input();
+float input();
 int main()
 {
-    input();
+    float r;
+
+    r=input();
+    printf("Average of the these numbers is: %.2f",r);
 
     return 0;
 }
-void input()
+float input()
 {
     int i,n,*p;
+    p=NULL;
     printf("Enter the size of an array:\n");
     scanf("%d",&n);
     printf("enter %d numbers\n",n);
     p=(int*)calloc(n,sizeof(int));
+    if(p==NULL)
+    {
+        printf("Memory Allocation failed\n");
+        return 0;
+    }
     for(i=0;i<n;i++)
         scanf("%d",(p+i));
 
@@ -25,6 +34,5 @@ void input()
     for(i=0;i<n;i++)
         avg=avg+p[i];
 
-    printf("The average of this array is %.2f",avg/n*1.0);
-
+    return avg/n*1.0;
 }
