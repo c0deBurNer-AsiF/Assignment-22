@@ -34,5 +34,6 @@ float input()
     for(i=0;i<n;i++)
         avg=avg+p[i];
 
+    free(p);
     return avg/n*1.0;
 }
